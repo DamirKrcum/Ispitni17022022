@@ -56,7 +56,7 @@ namespace DLWMS.WinForms.IspitIB200264
 
         private double IzracunajProsjek(Student student)
         {
-            var lst = studentiPredmeti.Where(st => st.StudentId == student.Id).ToList();
+            var lst = db.studentiPredmeti.Where(st => st.StudentId == student.Id).ToList();
             if (lst.Count == 0)
                 return 5;
             var prosjek = Math.Round(lst.Average(st => st.Ocjena), 2);
